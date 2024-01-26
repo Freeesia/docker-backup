@@ -7,3 +7,8 @@ BACKUP_CRON_EXP: 0 4 * * *
 
 # Delete backups that are over 15 days
 BACKUP_TTL: 15
+
+# Owner Info
+BACKUP_FILE_OWNER_ID: 0
+BACKUP_FILE_GROUP_ID: 0
+BACKUP_FILE_PERMISSIONS: 600

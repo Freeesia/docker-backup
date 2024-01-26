@@ -12,6 +12,7 @@ dateFileFormat="+%Y%m%dT%H%M%S"
 backupFilePath="$BACKUP_OUTPUT/$(date "$dateFileFormat").tar.gz"
 
 tar -czf $backupFilePath $BACKUP_INPUT
-chmod 600 $backupFilePath
+chmod $BACKUP_FILE_PERMISSIONS $backupFilePath
+chown $BACKUP_FILE_OWNER_ID:$BACKUP_FILE_GROUP_ID $backupFilePath
 
 exit 0
