@@ -4,6 +4,11 @@
 
 source /container/run/environment.sh
 
+# BACKUP_PRE_SCRIPT is a path to a script that will be executed before the backup
+if [ -n "$BACKUP_PRE_SCRIPT" ] && [ -f "$BACKUP_PRE_SCRIPT" ]; then
+  $BACKUP_PRE_SCRIPT
+fi
+
 # delete backups that are over $MMC_MAIL_BACKUP_TTL days
 find $BACKUP_OUTPUT -type f -mtime +$BACKUP_TTL -exec rm {} \;
 
